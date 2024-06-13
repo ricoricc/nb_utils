@@ -72,7 +72,7 @@ class CircularProgressGradient extends StatelessWidget {
     }
     List<Color> _colors = colors;
     if (_colors == null) {
-      Color color = Theme.of(context).accentColor;
+      Color color = Theme.of(context).primaryColor;
       _colors = [color, color];
     }
     return Transform.rotate(
@@ -128,8 +128,7 @@ class _GradientCircularProgressPainter extends CustomPainter {
       _start = asin(stokeWidth / (size.width - stokeWidth));
     }
 
-    Rect rect = Offset(_offset, _offset) &
-        Size(size.width - stokeWidth, size.height - stokeWidth);
+    Rect rect = Offset(_offset, _offset) & Size(size.width - stokeWidth, size.height - stokeWidth);
 
     var paint = Paint()
       ..strokeCap = strokeCapRound ? StrokeCap.round : StrokeCap.butt

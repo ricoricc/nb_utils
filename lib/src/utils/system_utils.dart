@@ -15,16 +15,14 @@ void finish(BuildContext context, [Object? result]) {
 /// ```dart
 /// launchNewScreen(context, '/HomePage');
 /// ```
-Future<T?> launchNewScreen<T>(BuildContext context, String tag) async =>
-    Navigator.of(context).pushNamed(tag);
+Future<T?> launchNewScreen<T>(BuildContext context, String tag) async => Navigator.of(context).pushNamed(tag);
 
 /// Removes all previous screens from the back stack and redirect to new screen with provided screen tag
 ///
 /// ```dart
 /// launchNewScreenWithNewTask(context, '/HomePage');
 /// ```
-Future<T?> launchNewScreenWithNewTask<T>(
-        BuildContext context, String tag) async =>
+Future<T?> launchNewScreenWithNewTask<T>(BuildContext context, String tag) async =>
     Navigator.of(context).pushNamedAndRemoveUntil(tag, (r) => false);
 
 /// Change status bar Color and Brightness
@@ -42,21 +40,20 @@ Future<void> setStatusBarColor(
       statusBarColor: statusBarColor,
       systemNavigationBarColor: systemNavigationBarColor,
       statusBarBrightness: statusBarBrightness,
-      statusBarIconBrightness: statusBarIconBrightness ??
-          (statusBarColor.isDark() ? Brightness.light : Brightness.dark),
+      statusBarIconBrightness: statusBarIconBrightness ?? (statusBarColor.isDark() ? Brightness.light : Brightness.dark),
     ),
   );
 }
 
-/// This function will show status bar
-Future<void> showStatusBar() async {
-  SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
-}
+// /// This function will show status bar
+// Future<void> showStatusBar() async {
+//   SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+// }
 
-/// This function will hide status bar
-Future<void> hideStatusBar() async {
-  SystemChrome.setEnabledSystemUIOverlays([]);
-}
+// /// This function will hide status bar
+// Future<void> hideStatusBar() async {
+//   SystemChrome.setEnabledSystemUIOverlays([]);
+// }
 
 /// Set orientation to portrait
 void setOrientationPortrait() {
@@ -95,15 +92,13 @@ Widget Function(BuildContext, Widget?)? scrollBehaviour() {
 /// Custom scroll behaviour widget
 class SBehavior extends ScrollBehavior {
   @override
-  Widget buildViewportChrome(
-      BuildContext context, Widget child, AxisDirection axisDirection) {
+  Widget buildViewportChrome(BuildContext context, Widget child, AxisDirection axisDirection) {
     return child;
   }
 }
 
 /// Invoke Native method and get result
-Future<T?> invokeNativeMethod<T>(String channel, String method,
-    [dynamic arguments]) async {
+Future<T?> invokeNativeMethod<T>(String channel, String method, [dynamic arguments]) async {
   var platform = MethodChannel(channel);
   return await platform.invokeMethod<T>(method, arguments);
 }

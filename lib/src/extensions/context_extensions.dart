@@ -30,7 +30,7 @@ extension ContextExtensions on BuildContext {
   Color get primaryColor => theme.primaryColor;
 
   /// Returns accentColor Color
-  Color get accentColor => theme.accentColor;
+  // Color get accentColor => theme.accentColor;
 
   /// Returns scaffoldBackgroundColor Color
   Color get scaffoldBackgroundColor => theme.scaffoldBackgroundColor;
@@ -52,8 +52,7 @@ extension ContextExtensions on BuildContext {
   bool isPhone() => MediaQuery.of(this).size.width < tabletBreakpointGlobal;
 
   bool isTablet() =>
-      MediaQuery.of(this).size.width < desktopBreakpointGlobal &&
-      MediaQuery.of(this).size.width >= tabletBreakpointGlobal;
+      MediaQuery.of(this).size.width < desktopBreakpointGlobal && MediaQuery.of(this).size.width >= tabletBreakpointGlobal;
 
   bool isDesktop() => MediaQuery.of(this).size.width >= desktopBreakpointGlobal;
 }

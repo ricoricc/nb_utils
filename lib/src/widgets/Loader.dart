@@ -5,8 +5,7 @@ import 'package:nb_utils/nb_utils.dart';
 class Loader extends StatefulWidget {
   final Color? color;
 
-  @Deprecated(
-      'accentColor is now deprecated and not being used. use defaultLoaderAccentColorGlobal instead')
+  @Deprecated('accentColor is now deprecated and not being used. use defaultLoaderAccentColorGlobal instead')
   final Color? accentColor;
   final Decoration? decoration;
   final int? size;
@@ -60,7 +59,7 @@ class LoaderState extends State<Loader> {
         value: widget.value,
         valueColor: widget.valueColor ??
             AlwaysStoppedAnimation(
-              defaultLoaderAccentColorGlobal ?? Theme.of(context).accentColor,
+              defaultLoaderAccentColorGlobal ?? Theme.of(context).primaryColor,
             ),
       ),
     ).center();
